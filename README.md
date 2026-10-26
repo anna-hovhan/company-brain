@@ -4,6 +4,10 @@ An AI operating system for a company that lives in one folder. You browse and ed
 
 It's built on [obsidian-second-brain](https://github.com/eugeniughelbur/obsidian-second-brain), a single-person AI second brain, and extends it for multiplayer use. It also adds strategy and product frameworks: Value Proposition Canvas, Opportunity Solution Tree, Effort-Impact Matrix with RICE, OKRs, Strategy Kernel, Playing to Win, Business Model Canvas and Now-Next-Later roadmaps.
 
+<img src="System/company-brain-overview.png" alt="Company Brain overview. One Obsidian vault holds three layers: company, team and personal. Links only point up. Claude operates the vault with skills, a CLI, an MCP server and guard hooks, and you browse and edit it in Obsidian." width="100%">
+
+> **Open this folder as an Obsidian vault.** It is plain markdown: wikilinks, graph view, Dataview hubs and kanban boards work out of the box. See Quick start.
+
 ## What's inside
 
 | Area | Where | What |
