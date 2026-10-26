@@ -17,7 +17,7 @@ team: "[[Platform]]"      # required when layer is team
 owner: "[[Jane Doe]]"     # accountable person, where meaningful
 ```
 
-Exempt from the universal fields: kanban boards (`kanban-plugin: board` frontmatter only), `Home.md`, `CLAUDE.md`, `README.md`, `index.md`, `log.md`, everything in `Templates/`, `Sources/`, `Exports/`, `.brain/`.
+Exempt from the universal fields: kanban boards (`kanban-plugin: board` frontmatter only), `Home.md`, `CLAUDE.md`, `README.md`, `index.md`, `log.md`, everything in `Templates/`, `Sources/`, `Exports/`, `.company-brain/`.
 
 ## Periods and names
 

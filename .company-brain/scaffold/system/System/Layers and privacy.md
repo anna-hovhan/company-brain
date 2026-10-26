@@ -9,7 +9,7 @@ layer: company
 # Layers and privacy
 
 ## For future agent
-This note is the human-readable version of the Company Brain layer model: what is shared, what stays personal, the link-direction rule, private sections, promotion, conflict-free teamwork, and the two sharing transports (git and Google Drive). The binding spec is `.brain/references/layers.md`.
+This note is the human-readable version of the Company Brain layer model: what is shared, what stays personal, the link-direction rule, private sections, promotion, conflict-free teamwork, and the two sharing transports (git and Google Drive). The binding spec is `.company-brain/references/layers.md`.
 
 ## What goes where
 | Layer | Folder | Who sees it | Examples |
@@ -36,7 +36,7 @@ Personal to team to company is always deliberate. Ask Claude to share or publish
 - Generated views (`OKR Tree`, prioritization, org chart, discovery canvases) are rebuilt by `brain refresh`; never merge them by hand.
 
 ## Sharing transports
-**Git (default, recommended).** The brain is a private git repository. `Company/`, `Teams/`, `System/`, `Templates/`, and `.brain/` are committed; `Personal/`, `Sources/`, `Exports/`, `index.md`, and `log.md` are gitignored. Company-layer changes go through pull requests so the company layer has review. In Obsidian, the Obsidian Git community plugin can pull and push on a schedule. Claude never pushes on its own.
+**Git (default, recommended).** The brain is a private git repository. `Company/`, `Teams/`, `System/`, `Templates/`, and `.company-brain/` are committed; `Personal/`, `Sources/`, `Exports/`, `index.md`, and `log.md` are gitignored. Company-layer changes go through pull requests so the company layer has review. In Obsidian, the Obsidian Git community plugin can pull and push on a schedule. Claude never pushes on its own.
 
 **Google Shared Drive.** For teams that do not use git: put `Company/` and each `Teams/<Team>/` in Shared Drive folders and replace the local folders with symlinks to them (Drive for Desktop, mirror mode). Keep `Personal/` a normal local folder. There is no review step, so limit who can edit the company folder in Drive.
 

@@ -2,17 +2,17 @@
 
 Company Brain vendors and adapts parts of **obsidian-second-brain**
 (https://github.com/eugeniughelbur/obsidian-second-brain), used under the MIT License below.
-The upstream commit these files are synced with is recorded in `.brain/upstream.json`;
+The upstream commit these files are synced with is recorded in `.company-brain/upstream.json`;
 `./brain upstream-check` lists what changed upstream since.
 
 | Company Brain file | Origin | Changes |
 |---|---|---|
-| `.brain/references/ai-first-rules.md` | `references/ai-first-rules.md` | none |
-| `.brain/references/freshness-policy.md` | `references/freshness-policy.md` | none |
-| `.brain/references/propagation.md` | `references/write-rules.md` | rewritten for layers |
-| `.brain/hooks/validate-ai-first.sh` | `hooks/validate-ai-first.sh` | brain found by `brain.yaml` marker, Company Brain config dir, kanban and engine folders skipped |
-| `.brain/mcp/vault/server.py`, `vault_ops.py` | `integrations/obsidian-mcp-server/` | tools renamed `brain_*`, `COMPANY_BRAIN_PATH`, captures in `Personal/Inbox`, skills from `skills/`, two new tools |
-| `.brain/scripts/osb_env.py` | `scripts/osb_env.py` | config dir and variable names |
+| `.company-brain/references/ai-first-rules.md` | `references/ai-first-rules.md` | none |
+| `.company-brain/references/freshness-policy.md` | `references/freshness-policy.md` | none |
+| `.company-brain/references/propagation.md` | `references/write-rules.md` | rewritten for layers |
+| `.company-brain/hooks/validate-ai-first.sh` | `hooks/validate-ai-first.sh` | brain found by `brain.yaml` marker, Company Brain config dir, kanban and engine folders skipped |
+| `.company-brain/mcp/vault/server.py`, `vault_ops.py` | `integrations/obsidian-mcp-server/` | tools renamed `brain_*`, `COMPANY_BRAIN_PATH`, captures in `Personal/Inbox`, skills from `skills/`, two new tools |
+| `.company-brain/scripts/osb_env.py` | `scripts/osb_env.py` | config dir and variable names |
 
 Patterns adopted (not code): the propagation rule, bi-temporal timelines, sentinel-marked generated blocks, the kanban exception, search before create.
 

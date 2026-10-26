@@ -2,7 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(./brain:*)",
-      "Bash(python3 .brain/scripts/brain.py:*)"
+      "Bash(python3 .company-brain/scripts/brain.py:*)"
     ]
   }
 }

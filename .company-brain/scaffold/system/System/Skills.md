@@ -9,7 +9,7 @@ layer: company
 # Skills
 
 ## For future agent
-This note is the catalog of Company Brain skills: what each does and where it writes. Skills live in `.brain/skills/<name>/SKILL.md` and run in Claude Code, the Claude desktop app, and Cowork as `/company-brain:<name>`, or automatically when a request matches their description.
+This note is the catalog of Company Brain skills: what each does and where it writes. Skills live in `.company-brain/skills/<name>/SKILL.md` and run in Claude Code, the Claude desktop app, and Cowork as `/company-brain:<name>`, or automatically when a request matches their description.
 
 ## Catalog
 | Skill | Does | Writes to |

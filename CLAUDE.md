@@ -2,7 +2,7 @@
 
 Read this before writing anything in this folder. It is the single source of truth for how Claude operates the brain. Navigation order: this file, then `index.md` (catalog, run `brain index` if missing), then the hub of the area you work in.
 
-The specs this manual summarizes live in `.brain/references/`: `ai-first-rules.md` (note-writing rules, vendored from obsidian-second-brain), `layers.md` (multiplayer model), `schemas.md` (types, fields, names), `propagation.md` (ripple rules), `sources.md` (Desktop and Google Drive), `freshness-policy.md`.
+The specs this manual summarizes live in `.company-brain/references/`: `ai-first-rules.md` (note-writing rules, vendored from obsidian-second-brain), `layers.md` (multiplayer model), `schemas.md` (types, fields, names), `propagation.md` (ripple rules), `sources.md` (Desktop and Google Drive), `freshness-policy.md`.
 
 ---
 
@@ -18,7 +18,7 @@ Notes are written for a future agent to retrieve and reason over:
 6. Confidence where it matters: `stated | high | medium | speculation`.
 7. Never invent facts, numbers, dates, people, or quotes. Unknown means `TBD`. Never claim a note does not exist without searching (filename, aliases, `index.md`, grep).
 
-Exempt from 0: kanban boards (`kanban-plugin: board` frontmatter, no preamble, it would render as a column), `Home.md`, this file, `README.md`, `index.md`, `log.md`, everything in `Templates/`, `Sources/`, `Exports/`, `.brain/`.
+Exempt from 0: kanban boards (`kanban-plugin: board` frontmatter, no preamble, it would render as a column), `Home.md`, this file, `README.md`, `index.md`, `log.md`, everything in `Templates/`, `Sources/`, `Exports/`, `.company-brain/`.
 
 ASCII punctuation only in notes: hyphens, not em or en dashes; straight quotes. The write hook flags substitutes.
 
@@ -44,7 +44,7 @@ ASCII punctuation only in notes: hyphens, not em or en dashes; straight quotes. 
 
 ## 2. Where notes go
 
-`<L>` is `Company`, `Teams/<Team>`, or `Personal`. Full table with fields: `.brain/references/schemas.md`.
+`<L>` is `Company`, `Teams/<Team>`, or `Personal`. Full table with fields: `.company-brain/references/schemas.md`.
 
 | Type | Folder | Filename |
 |---|---|---|
@@ -102,7 +102,7 @@ Method notes for every framework (Value Proposition Canvas, Opportunity Solution
 
 ## 5. Propagation (never write a note in isolation)
 
-Trace every write forward, up or sideways, never down (`.brain/references/propagation.md`):
+Trace every write forward, up or sideways, never down (`.company-brain/references/propagation.md`):
 - Objective created: parent's supporting list (Dataview), `brain refresh`.
 - KR check-in: KR inline fields, a Check-ins row, `last_checkin`, the author's weekly note.
 - Project created: layer board card, KR links, roadmap card if `roadmap:` is set.
@@ -128,7 +128,7 @@ Kanban card: `- [ ] 🔴 **Title** · @{YYYY-MM-DD}` with an indented context li
 ## 7. Do not
 
 - Do not use the obsidian-second-brain MCP tools (`mcp__plugin_obsidian-second-brain_*`) here: they point at a different (personal) vault. Use file tools, the `brain` CLI, or the `company-brain` brain MCP tools.
-- Do not write to `.brain/` (the engine) unless the user is developing the system itself.
+- Do not write to `.company-brain/` (the engine) unless the user is developing the system itself.
 - Do not edit approved mission, vision, values, or strategy text without showing the diff and getting a yes.
 - Do not create OKRs, plans, or roadmap moves for a team without that team's lead; draft them as proposals.
 - Do not put performance, compensation, health, or personal-life information in shared notes.

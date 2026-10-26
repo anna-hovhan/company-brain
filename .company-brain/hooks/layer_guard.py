@@ -7,7 +7,7 @@ Teams/ of a Company Brain, it flags:
     dangles for everyone else and its title can reveal private content),
   - a `## Private` section (private content belongs in Personal/),
   - `layer: personal` declared in a shared folder.
-Spec: .brain/references/layers.md. Warns via hook JSON; the write is not reverted.
+Spec: .company-brain/references/layers.md. Warns via hook JSON; the write is not reverted.
 """
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ import brain  # noqa: E402
 
 def find_root(path: Path):
     for cand in path.parents:
-        if (cand / "brain.yaml").is_file() and (cand / ".brain").is_dir():
+        if (cand / "brain.yaml").is_file() and (cand / ".company-brain").is_dir():
             return cand
     return None
 

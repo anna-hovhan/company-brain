@@ -80,7 +80,7 @@ When several people write to the same shared area, structure the files so that g
 
 | Model | How the shared layers travel | Personal layer | When to use |
 |---|---|---|---|
-| `git` (default) | The vault is a private git repo. `Company/`, `Teams/`, `System/`, `Templates/`, `.brain/` are committed. Changes to `Company/` go through pull requests | gitignored, never leaves the laptop | Teams comfortable with git, or using the Obsidian Git plugin |
+| `git` (default) | The vault is a private git repo. `Company/`, `Teams/`, `System/`, `Templates/`, `.company-brain/` are committed. Changes to `Company/` go through pull requests | gitignored, never leaves the laptop | Teams comfortable with git, or using the Obsidian Git plugin |
 | `drive` | `Company/` and each `Teams/<Team>/` are symlinks into Google Shared Drive folders (Drive for Desktop, mirror mode recommended) | a normal local folder | Non-technical teams. No review step, so keep company-layer edits to a few editors |
 | `local` | Nothing is shared | local | Trying the system alone before inviting the team |
 

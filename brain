@@ -1,4 +1,4 @@
 #!/bin/sh
 # Company Brain CLI wrapper: ./brain <command> (see ./brain --help)
 DIR="$(cd "$(dirname "$0")" && pwd)"
-exec python3 "$DIR/.brain/scripts/brain.py" --root "$DIR" "$@"
+exec python3 "$DIR/.company-brain/scripts/brain.py" --root "$DIR" "$@"

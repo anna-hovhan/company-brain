@@ -4,7 +4,7 @@
 #
 # Vendored from obsidian-second-brain (MIT, (c) 2026 Eugeniu Ghelbur).
 # Company Brain changes: the brain root is the nearest ancestor of the written
-# file that holds brain.yaml and .brain/ (no OBSIDIAN_VAULT_PATH), config is
+# file that holds brain.yaml and .company-brain/ (no OBSIDIAN_VAULT_PATH), config is
 # read from ~/.config/company-brain/.env, kanban boards are skipped by their
 # kanban-plugin frontmatter, and engine/source/export folders are skipped.
 # =============================================================================
@@ -228,7 +228,7 @@ env_value() {
 VAULT=""
 _dir=$(dirname "$FILE")
 while [[ -n "$_dir" && "$_dir" != "/" && "$_dir" != "." ]]; do
-  if [[ -f "$_dir/brain.yaml" && -d "$_dir/.brain" ]]; then VAULT="$_dir"; break; fi
+  if [[ -f "$_dir/brain.yaml" && -d "$_dir/.company-brain" ]]; then VAULT="$_dir"; break; fi
   _dir=$(dirname "$_dir")
 done
 [[ -z "$VAULT" ]] && exit 0
@@ -249,7 +249,7 @@ esac
 # below keep matching the lowercased key; elsewhere the case is exact.
 case "$(uname -s 2>/dev/null)" in MINGW*|MSYS*|CYGWIN*) shopt -s nocasematch ;; esac
 case "$FILE_KEY" in
-  */Templates/*|*/templates/*|"$VAULT_KEY"/Sources/*|"$VAULT_KEY"/Exports/*|"$VAULT_KEY"/.brain/*|"$VAULT_KEY"/.obsidian/*|*/.git/*|*/.trash/*|*/.claude/*|"$VAULT_KEY"/Logs/*|"$VAULT_KEY"/CLAUDE.md|"$VAULT_KEY"/README.md|"$VAULT_KEY"/Home.md|"$VAULT_KEY"/index.md|"$VAULT_KEY"/log.md|"$VAULT_KEY"/THIRD_PARTY_NOTICES.md)
+  */Templates/*|*/templates/*|"$VAULT_KEY"/Sources/*|"$VAULT_KEY"/Exports/*|"$VAULT_KEY"/.company-brain/*|"$VAULT_KEY"/.obsidian/*|*/.git/*|*/.trash/*|*/.claude/*|"$VAULT_KEY"/Logs/*|"$VAULT_KEY"/CLAUDE.md|"$VAULT_KEY"/README.md|"$VAULT_KEY"/Home.md|"$VAULT_KEY"/index.md|"$VAULT_KEY"/log.md|"$VAULT_KEY"/THIRD_PARTY_NOTICES.md)
     exit 0 ;;
 esac
 shopt -u nocasematch

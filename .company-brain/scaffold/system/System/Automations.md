@@ -19,7 +19,7 @@ This note lists what Company Brain does automatically (hooks), what can be sched
 | `layer_guard.py` | after every write | warns when a shared note links to a personal note, contains a Private section, or declares the wrong layer |
 
 ## Scaffold watcher (macOS, opt-in)
-`./brain scaffold-sync --watch` installs a launchd agent for this brain, so edits to System/, Templates/, CLAUDE.md, Home.md, and vault settings flow into `.brain/scaffold/system` without running a command, whichever app made them (Obsidian, Cursor, Claude). It syncs on file changes and every 5 minutes (`--interval <seconds>` to change). It only writes the scaffold, never your notes. The log is in `~/Library/Logs/company-brain/`. Stop it with `./brain scaffold-sync --unwatch`; after moving the brain folder, run `--watch` again from the new place (the old agent is removed). macOS blocks background access to Desktop, Documents, and Downloads, so keep the brain elsewhere (for example `~/Brains/`) or give `python3` Full Disk Access; `--watch` warns when it is blocked.
+`./brain scaffold-sync --watch` installs a launchd agent for this brain, so edits to System/, Templates/, CLAUDE.md, Home.md, and vault settings flow into `.company-brain/scaffold/system` without running a command, whichever app made them (Obsidian, Cursor, Claude). It syncs on file changes and every 5 minutes (`--interval <seconds>` to change). It only writes the scaffold, never your notes. The log is in `~/Library/Logs/company-brain/`. Stop it with `./brain scaffold-sync --unwatch`; after moving the brain folder, run `--watch` again from the new place (the old agent is removed). macOS blocks background access to Desktop, Documents, and Downloads, so keep the brain elsewhere (for example `~/Brains/`) or give `python3` Full Disk Access; `--watch` warns when it is blocked.
 
 ## Suggested schedule
 | Cadence | Prompt to schedule | Notes |
@@ -34,5 +34,5 @@ Unattended runs draft; they never publish team updates, promote notes, push to g
 
 ## How to schedule
 - **Cowork (Claude desktop app), recommended**: open a Cowork session on the brain folder and create a scheduled task with the prompt above. It runs on your computer, so it can read and write the vault.
-- **Claude Code headless with launchd**: `claude -p "<prompt>" --permission-mode acceptEdits` run from the brain folder. launchd strips the environment, so set an explicit `PATH` that includes `claude`, `python3`, and `uv`. Template: `.brain/automations/com.company-brain.weekly.plist.template`.
+- **Claude Code headless with launchd**: `claude -p "<prompt>" --permission-mode acceptEdits` run from the brain folder. launchd strips the environment, so set an explicit `PATH` that includes `claude`, `python3`, and `uv`. Template: `.company-brain/automations/com.company-brain.weekly.plist.template`.
 - **Cloud schedulers** (remote routines) run on a server and cannot see your local vault; use them only if the brain is in a git remote and you accept that the run happens on a copy.

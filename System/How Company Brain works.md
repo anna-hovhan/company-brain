@@ -9,7 +9,7 @@ layer: company
 # How Company Brain works
 
 ## For future agent
-This note is the plain-language overview of Company Brain: what it is, the three ways to use it (Obsidian, Claude, a Claude Project), the layer model, the operating rhythm, and how the pieces connect into one graph. Start here before reading the specs in `.brain/references/`.
+This note is the plain-language overview of Company Brain: what it is, the three ways to use it (Obsidian, Claude, a Claude Project), the layer model, the operating rhythm, and how the pieces connect into one graph. Start here before reading the specs in `.company-brain/references/`.
 
 ## In one paragraph
 Company Brain is a folder of markdown notes that holds a company's mission, strategy, goals, discovery, roadmap, organization, projects, meetings, and weekly work, all linked so it reads like one network. People browse and edit it in [[Obsidian]]; Claude reads and writes it through the Company Brain plugin (skills, hooks, an MCP server, and the `brain` CLI); colleagues who only use claude.ai can get a read-only snapshot as a Claude Project. It is built on the single-person [[obsidian-second-brain]] engine and adds team and company layers.
@@ -45,4 +45,4 @@ Every note links to what it serves. A weekly note links key results; a key resul
 - Notes: `Company/`, `Teams/`, `Personal/`.
 - External files: `Sources/` (symlinks to Desktop and Google Drive folders, read-only).
 - Method: [[Frameworks]]. Templates: `Templates/`. Skills catalog: [[Skills]]. Automations: [[Automations]]. Setup: [[Setup]].
-- Engine (hidden in Obsidian): `.brain/` holds the plugin, CLI, hooks, MCP server, and specs.
+- Engine (hidden in Obsidian): `.company-brain/` holds the plugin, CLI, hooks, MCP server, and specs.

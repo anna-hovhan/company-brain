@@ -34,7 +34,7 @@ Add to Claude Desktop's MCP configuration (Settings, Developer, Edit config), wi
   "mcpServers": {
     "company-brain": {
       "command": "uv",
-      "args": ["run", "--no-project", "--with", "mcp<2", "python", "<brain>/.brain/mcp/vault/server.py"],
+      "args": ["run", "--no-project", "--with", "mcp<2", "python", "<brain>/.company-brain/mcp/vault/server.py"],
       "env": { "COMPANY_BRAIN_PATH": "<brain>" }
     }
   }
