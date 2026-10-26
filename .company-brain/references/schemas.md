@@ -15,7 +15,11 @@ ai-first: true
 layer: company            # company | team | personal  (must match the folder)
 team: "[[Platform]]"      # required when layer is team
 owner: "[[Jane Doe]]"     # accountable person, where meaningful
+last-checked: YYYY-MM-DD  # optional: the owner confirmed the facts; set only by /company-brain:checkin
+checkin: never            # optional: never | priority. Keeps a note out of check-ins, or asks about it first
 ```
+
+`last-checked` moves only when the owner looks at the facts. `updated` is the last meaningful edit, so a link-only or formatting change must not touch it.
 
 Exempt from the universal fields: kanban boards (`kanban-plugin: board` frontmatter only), `Home.md`, `CLAUDE.md`, `README.md`, `index.md`, `log.md`, everything in `Templates/`, `Sources/`, `Exports/`, `.company-brain/`.
 
@@ -266,6 +270,24 @@ source_path: "Sources/GTM Strategy/YYYY plan.pdf"   # or source_url
 source_type: pdf           # pdf | doc | gdoc | sheet | slides | web | transcript | md
 ingested: YYYY-MM-DD
 confidence: stated
+```
+
+### `source` (a captured file from folder ingestion)
+A knowledge note that stands for one source file, written by `/company-brain:ingest` in a folder batch. The helper `scripts/ingest_batch.py` recognises it by `type: source`, found under the layer's Knowledge folder.
+```yaml
+type: source
+source_path: "/absolute/path/from/the/plan"   # the source's identity for completion receipts; machine-specific, so keep in Personal
+source_file_hash: "<64 hex>"                   # SHA-256 of the file's bytes, from the plan
+source_type: md            # md | pdf | audio | image
+ingested: YYYY-MM-DD
+confidence: stated
+```
+Everything else follows `knowledge`. A completion receipt (a hidden comment in `log.md`) says the work for that source version is done; it does not judge extraction quality.
+
+### `crew-log`, `crew-lessons` (written by `scripts/crew.py`)
+```yaml
+type: crew-log             # one note per day in Personal/Crew/: one line per job (time | agent | area | what | where)
+type: crew-lessons         # lessons agents leave each other; open until a human runs keep or drop
 ```
 
 ### `hub`, `framework`, `system`, generated views

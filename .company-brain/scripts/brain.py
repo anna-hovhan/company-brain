@@ -563,7 +563,7 @@ SCAFFOLD_SYSTEM_EXCLUDE = {"System/Build Plan.md"}
 
 def scaffold_system_sources(root: Path) -> dict:
     """rel path -> vault file, for everything new brains get from scaffold/system."""
-    files = [root / n for n in ("CLAUDE.md", "Home.md", ".gitignore", ".freshness.json")]
+    files = [root / n for n in ("CLAUDE.md", "Home.md", ".gitignore", ".freshness.json", ".vault-config.json")]
     files += sorted((root / "System").rglob("*.md")) + sorted((root / "Templates").rglob("*.md"))
     obsidian = root / ".obsidian"
     files += sorted(p for p in obsidian.glob("*.json") if not p.name.startswith("workspace"))
@@ -2191,6 +2191,20 @@ def cmd_freshness(args):
         sys.exit(1)
 
 
+def cmd_search(args):
+    """Search the brain from a shell, a cron job or CI, with no agent (port of upstream scripts/vault_search.py)."""
+    root = need_root(args)
+    os.environ["COMPANY_BRAIN_PATH"] = str(root)
+    sys.path.insert(0, str(ENGINE / "mcp" / "vault"))
+    import vault_ops  # the same search the brain MCP server serves
+    try:
+        results = vault_ops.search(args.query, limit=args.limit, semantic=False if args.lexical else None)
+    except (RuntimeError, OSError) as exc:
+        raise SystemExit(f"error: search failed: {exc}")
+    # ASCII escapes, not raw UTF-8: a console in a legacy code page cannot print a CJK or emoji title.
+    print(json.dumps(results))
+
+
 def cmd_connect(args):
     root = need_root(args)
     src = root / "Sources"
@@ -2311,6 +2325,12 @@ def main(argv=None):
     p.add_argument("--verify", action="store_true",
                    help="offline: fail if a vendored copy file was edited (checks sha256 in upstream.json)")
     p.set_defaults(fn=cmd_upstream_check)
+
+    p = sub.add_parser("search", help="search the brain without an agent: JSON results (keyword, plus semantic when available)")
+    p.add_argument("query")
+    p.add_argument("--limit", type=int, default=6)
+    p.add_argument("--lexical", action="store_true", help="keyword search only")
+    p.set_defaults(fn=cmd_search)
 
     p = sub.add_parser("freshness", help="freshness lint: undated claims about fast-changing facts (references/freshness-policy.md)")
     p.add_argument("--strict", action="store_true", help="warnings (aged stamps) also fail the run")

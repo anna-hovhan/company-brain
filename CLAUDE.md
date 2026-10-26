@@ -58,7 +58,8 @@ Fast-changing facts (counts, open items, balances, statuses) are timeless, dated
 | meeting | `<L>/Meetings/` | `<YYYY-MM-DD> - <Title>` |
 | one-on-one | `Personal/1-1s/` | `1-1 - <Person>` (one running note) |
 | decision | `<L>/Decisions/` | `DEC-<YYYY-MM-DD> - <Title>` |
-| knowledge | `<L>/Knowledge/` (personal: `Personal/Notes/`) | `<Title>` |
+| knowledge, source | `<L>/Knowledge/` (personal: `Personal/Notes/`) | `<Title>` (`source` is a captured file from folder ingestion) |
+| crew-log, crew-lessons | `Personal/Crew/` | `<YYYY-MM-DD>` (written by `crew.py`) |
 | person | `Company/Org/People/` | `<Full Name>` |
 | team | `Teams/<Team>/` | `<Team>` |
 | daily, weekly | `Personal/Daily/`, `Personal/Weekly/` | `<YYYY-MM-DD>`, `<YYYY>-W<WW>` |
@@ -84,6 +85,7 @@ Filenames are globally unique on purpose (Obsidian resolves links by filename). 
 | `init`, `team add`, `person add` | scaffolding (setup and org skills) |
 | `connect`, `sources`, `gdoc` | Desktop and Google Drive sources |
 | `export-pack` | read-only Claude Project pack |
+| `search "<query>" [--limit N] [--lexical]` | search the brain without an agent (JSON), for scripts and cron |
 | `freshness [--strict]` | freshness lint: undated claims about fast-changing facts, aged `as of` stamps, unmapped pointers. Also part of `check` |
 | `upstream-check [--verify]` | what changed upstream in the files borrowed from obsidian-second-brain; `--verify` fails if a vendored copy was edited |
 | `context --level N` | company context as JSON |
@@ -98,7 +100,7 @@ Kinds for `new`: objective, annual-plan, quarterly-plan, strategy, playing-to-wi
 
 Run as `/company-brain:<name>` or by asking in plain words. Catalog with outputs: `System/Skills.md`.
 
-setup, context, daily, weekly, team-weekly, okr, plan, strategy, vpc, ost, prioritize, roadmap, org, project, meeting, decide, board, promote, connect, ingest, health, export.
+setup, context, daily, weekly, team-weekly, okr, plan, strategy, vpc, ost, prioritize, roadmap, org, project, meeting, decide, board, promote, connect, ingest, health, export, checkin, reconcile, crew.
 
 Method notes for every framework (Value Proposition Canvas, Opportunity Solution Tree, Effort-Impact Matrix with RICE, OKRs, Strategy Kernel, Playing to Win, Business Model Canvas, Now-Next-Later Roadmap): `System/Frameworks/`. Read the relevant one before applying a framework.
 
