@@ -40,6 +40,12 @@ Why plugin-first: a Claude Project can't read local files, run hooks or automate
 
 Details: `System/Layers and privacy.md` (human) and `.company-brain/references/layers.md` (spec).
 
+## How it fits together
+
+The top diagram shows how inputs, the Claude plugin and the three layers connect, and the only route content takes upward. The bottom one shows how the notes depend on each other, from mission down to weekly check-ins. Click the image for full size.
+
+<a href="System/company-brain-map.png"><img src="System/company-brain-map.png" alt="Company Brain map. Top: system flow from inputs and surfaces through the engine (skills, hooks, CLI, MCP server) into the personal, team and company layers, with derived outputs. Bottom: note dependencies from mission and strategy through OKRs, discovery, projects and weekly check-ins." width="100%"></a>
+
 ## Quick start
 
 1. **Obsidian**: open this folder as a vault, then enable the Dataview, Kanban, Templater and Calendar community plugins.
