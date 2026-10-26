@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: the workflow only reads the repo.
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Tests and guards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip pytest
+
+      # Unit tests for the freshness lint (copied from obsidian-second-brain) and the guards
+      # that wire it in: hooks, CLI, vendored-file integrity.
+      - name: Run tests
+        run: python -m pytest .company-brain/tests -q
+
+      # Files marked "copy" in .company-brain/upstream.json are vendored byte for byte. Fail if
+      # one was edited here. Take upstream changes with: ./brain upstream-check --copy
+      - name: Vendored files are unedited
+        run: ./brain upstream-check --verify
+
+      # The brain's own notes must obey the freshness policy (every fact timeless, dated or a pointer).
+      - name: Freshness lint
+        run: ./brain freshness --strict
+
+      # Layer leaks, layer mismatches and private sections in shared notes are errors.
+      - name: Brain check
+        run: ./brain check --severity error
+
+      # New brains start from .company-brain/scaffold. Fail if it drifted from System/, Templates/,
+      # CLAUDE.md, Home.md. Fix with: ./brain scaffold-sync
+      - name: Scaffold is in sync
+        run: ./brain scaffold-sync --check

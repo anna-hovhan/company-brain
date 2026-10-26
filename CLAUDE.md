@@ -22,6 +22,8 @@ Exempt from 0: kanban boards (`kanban-plugin: board` frontmatter, no preamble, i
 
 ASCII punctuation only in notes: hyphens, not em or en dashes; straight quotes. The write hook flags substitutes.
 
+Fast-changing facts (counts, open items, balances, statuses) are timeless, dated `(as of YYYY-MM-DD)`, or a pointer to where the truth lives. A hook checks every write and `brain freshness` checks the whole brain (`.company-brain/references/freshness-policy.md`).
+
 ---
 
 ## 1. Layers and privacy (multiplayer)
@@ -82,6 +84,8 @@ Filenames are globally unique on purpose (Obsidian resolves links by filename). 
 | `init`, `team add`, `person add` | scaffolding (setup and org skills) |
 | `connect`, `sources`, `gdoc` | Desktop and Google Drive sources |
 | `export-pack` | read-only Claude Project pack |
+| `freshness [--strict]` | freshness lint: undated claims about fast-changing facts, aged `as of` stamps, unmapped pointers. Also part of `check` |
+| `upstream-check [--verify]` | what changed upstream in the files borrowed from obsidian-second-brain; `--verify` fails if a vendored copy was edited |
 | `context --level N` | company context as JSON |
 
 Kinds for `new`: objective, annual-plan, quarterly-plan, strategy, playing-to-win, vpc, bmc, outcome, opportunity, solution, experiment, project, meeting, decision, knowledge, person, one-on-one, daily, weekly, team-update, team-weekly.
@@ -129,6 +133,7 @@ Kanban card: `- [ ] 🔴 **Title** · @{YYYY-MM-DD}` with an indented context li
 
 - Do not use the obsidian-second-brain MCP tools (`mcp__plugin_obsidian-second-brain_*`) here: they point at a different (personal) vault. Use file tools, the `brain` CLI, or the `company-brain` brain MCP tools.
 - Do not write to `.company-brain/` (the engine) unless the user is developing the system itself.
+- Do not edit vendored files (`"mode": "copy"` in `.company-brain/upstream.json`, for example the freshness lint). A hook blocks it, and tests and CI verify their checksums. Take upstream changes with `./brain upstream-check --copy`.
 - Do not edit approved mission, vision, values, or strategy text without showing the diff and getting a yes.
 - Do not create OKRs, plans, or roadmap moves for a team without that team's lead; draft them as proposals.
 - Do not put performance, compensation, health, or personal-life information in shared notes.

@@ -13,6 +13,11 @@ The upstream commit these files are synced with is recorded in `.company-brain/u
 | `.company-brain/hooks/validate-ai-first.sh` | `hooks/validate-ai-first.sh` | brain found by `brain.yaml` marker, Company Brain config dir, kanban and engine folders skipped |
 | `.company-brain/mcp/vault/server.py`, `vault_ops.py` | `integrations/obsidian-mcp-server/` | tools renamed `brain_*`, `COMPANY_BRAIN_PATH`, captures in `Personal/Inbox`, skills from `skills/`, two new tools |
 | `.company-brain/scripts/osb_env.py` | `scripts/osb_env.py` | config dir and variable names |
+| `.company-brain/scripts/freshness_lint.py` | `scripts/freshness_lint.py` | none (wired in by `brain.py`, `hooks/freshness_guard.py`) |
+| `.company-brain/scripts/vault_scan.py` | `scripts/vault_scan.py` | none (imported by the freshness lint) |
+| `.company-brain/tests/test_freshness_lint.py` | `tests/test_freshness_lint.py` | none |
+
+Files with no changes are protected against drift: `.company-brain/upstream.json` records their sha256, `hooks/vendored_guard.py` blocks edits, and the tests and CI (`./brain upstream-check --verify`) fail if one differs.
 
 Patterns adopted (not code): the propagation rule, bi-temporal timelines, sentinel-marked generated blocks, the kanban exception, search before create.
 

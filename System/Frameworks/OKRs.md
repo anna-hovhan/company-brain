@@ -19,7 +19,7 @@ A goal system with two parts. The **objective** says what you want to achieve: q
 - Objective: one line, no numbers, worth getting out of bed for. "Make onboarding effortless for new teams."
 - Key result: an outcome with a baseline and a target, "Week-2 retention of new teams from 38 percent to 50 percent". Milestone KRs ("migration complete") are allowed but should be the minority.
 - Outputs are not key results: "launch the new checklist" is a project; its KR is the change it should cause.
-- Scoring: Google's re:Work guide puts the sweet spot for the average score across OKRs at 0.6 to 0.7; scoring 1.0 every time means the goals were not ambitious enough (as of 2026-10, rework.withgoogle.com).
+- Scoring: Google's `re:Work` guide puts the sweet spot for the average score across OKRs at 0.6 to 0.7; scoring 1.0 every time means the goals were not ambitious enough (as of 2026-10, rework.withgoogle.com).
 - Committed vs aspirational: many teams mark committed OKRs (expected to hit 1.0) separately from aspirational ones (expected to fall short). Say which kind each objective is.
 
 ## The cascade in Company Brain
@@ -56,5 +56,5 @@ Compare progress with time elapsed in the period. Clearly behind pace, or confid
 ## References
 - John Doerr, Measure What Matters, Portfolio, 2018 (stated).
 - Andy Grove, High Output Management, Random House, 1983 (stated).
-- Google re:Work, Set goals with OKRs, https://rework.withgoogle.com/intl/en/guides/set-goals-with-okrs (as of 2026-10).
+- Google `re:Work`, Set goals with OKRs, https://rework.withgoogle.com/intl/en/guides/set-goals-with-okrs (as of 2026-10).
 - What Matters, What is an OKR? Definition and examples, https://www.whatmatters.com/faqs/okr-meaning-definition-example (as of 2026-10).

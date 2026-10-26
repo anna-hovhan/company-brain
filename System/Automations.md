@@ -16,6 +16,8 @@ This note lists what Company Brain does automatically (hooks), what can be sched
 |---|---|---|
 | `session_context.py` | every session start | tells Claude where the brain and engine are, who you are, the current quarter and week, and the layer rules |
 | `validate-ai-first.sh` | after every write | warns when a note lacks AI-first frontmatter or the preamble, has banned characters, invalid tags, or secrets (vendored from obsidian-second-brain) |
+| `freshness_guard.py` | after every write | warns when a note states a fast-changing fact with no `as of` date, an aged stamp, or an unmapped pointer (lint vendored from obsidian-second-brain) |
+| `vendored_guard.py` | before every write | blocks edits to files vendored unchanged from obsidian-second-brain, so they cannot silently drift from upstream |
 | `layer_guard.py` | after every write | warns when a shared note links to a personal note, contains a Private section, or declares the wrong layer |
 
 ## Scaffold watcher (macOS, opt-in)
