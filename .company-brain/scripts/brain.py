@@ -774,8 +774,9 @@ def upstream_check(root: Path, diff: bool = False, copy: bool = False, mark: boo
                 target = root / f["local"]
                 target.write_bytes(_git(root, "show", f"{ref}:{f['upstream']}", binary=True))
                 for entry in conf["files"]:
-                    if entry["upstream"] == f["upstream"]:
+                    if entry["local"] == f["local"]:
                         entry["sha256"] = sha256_file(target)  # keep the integrity guard in step with the copy
+                        entry["commit"] = head  # this file is now current; the next --mark clears it
                 res["copied"].append(f["local"])
         if res["copied"]:
             UPSTREAM_CONF.write_text(json.dumps(conf, indent=2) + "\n", encoding="utf-8")

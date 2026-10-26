@@ -13,8 +13,7 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-import brain  # noqa: E402
+SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 
 
 def find_root(path: Path):
@@ -25,6 +24,8 @@ def find_root(path: Path):
 
 
 def main() -> None:
+    sys.path.insert(0, str(SCRIPTS))
+    import brain  # inside main so a broken engine is caught by the guard below, not at import
     try:
         payload = json.load(sys.stdin)
     except ValueError:

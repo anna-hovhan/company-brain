@@ -13,7 +13,7 @@ Notes are written for a future agent to retrieve and reason over:
 1. Self-contained: each note explains itself (what, why, when).
 2. A `## For future agent` preamble right after the frontmatter: 2-3 sentences on what the note is, why it exists, and any staleness caveat.
 3. Frontmatter: `date`, `type`, `tags` (include the type), `ai-first: true`, `layer` (company, team, personal), `team` for team notes, plus the type's fields from `schemas.md`.
-4. External claims carry recency markers and sources inline: `(as of 2026-10, source-url)`.
+4. External claims carry recency markers and sources inline: `(as of YYYY-MM, source-url)`. This template ships without hard-coded dates; add stamps when you write your own claims.
 5. `[[wikilinks]]` for every person, team, objective, KR, project, decision, and concept mentioned.
 6. Confidence where it matters: `stated | high | medium | speculation`.
 7. Never invent facts, numbers, dates, people, or quotes. Unknown means `TBD`. Never claim a note does not exist without searching (filename, aliases, `index.md`, grep).

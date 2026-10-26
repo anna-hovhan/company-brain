@@ -9,6 +9,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -61,7 +62,7 @@ def brain_copy(tmp_path):
 
 def note(path: Path, body: str) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("---\ndate: 2026-10-26\ntype: knowledge\ntags: [knowledge]\nai-first: true\nlayer: company\n---\n"
+    path.write_text("---\ndate: " + dt.date.today().isoformat() + "\ntype: knowledge\ntags: [knowledge]\nai-first: true\nlayer: company\n---\n"
                     f"# {path.stem}\n\n## For future agent\nTest note.\n\n{body}\n", encoding="utf-8")
     return path
 
@@ -106,8 +107,9 @@ def test_verify_flag_fails_when_a_copy_is_edited(brain_copy):
 # --- the brain obeys its own policy ----------------------------------------------------------
 
 def test_the_brain_is_freshness_clean():
+    # errors only: an aged stamp is a warning and must never break the build by itself
     report = brain.freshness_report(BRAIN)
-    assert report["errors"] == 0 and report["warnings"] == 0, report["findings"]
+    assert report["errors"] == 0, report["findings"]
 
 
 def test_new_brains_inherit_the_freshness_config():
@@ -180,3 +182,52 @@ def test_freshness_guard_warns_on_a_bad_note_and_stays_quiet_on_a_good_one(brain
     stamp = dt.date.today().isoformat()
     good = note(brain_copy / "Company" / "Knowledge" / "Good.md", f"13 open deals (as of {stamp}).")
     assert run_hook("freshness_guard.py", good) == ""
+
+
+# --- the template ships without hard-coded dates -----------------------------------------------
+
+# Month-level dates, quarters, weeks, years from 2025 on, and "as of" stamps. Publication years
+# of cited books (2014, 2021) are history and are allowed.
+DATE_PATTERN = re.compile(r"\b20\d\d-\d\d\b|\b20\d\d-Q[1-4]\b|\b20\d\d-W\d\d\b|\b(?:202[5-9]|203\d)\b|\bas of 20", re.I)
+LEGAL = re.compile(r"\(c\)|copyright", re.I)
+# Shipped content: the template's own notes, templates, specs and skills. Company/ and Teams/ hold
+# a company's own notes once it uses the brain, so they are not checked.
+SHIPPED = ("System", "Templates", ".company-brain/references", ".company-brain/skills",
+           ".company-brain/scaffold", "CLAUDE.md", "README.md")
+
+
+def vendored_paths() -> set:
+    return {f["local"] for f in conf()["files"] if f["mode"] == "copy"}
+
+
+def test_template_ships_without_hardcoded_dates():
+    skip = vendored_paths()
+    hits = []
+    for entry in SHIPPED:
+        base = BRAIN / entry
+        for path in ([base] if base.is_file() else sorted(base.rglob("*.md"))):
+            rel = path.relative_to(BRAIN).as_posix()
+            if rel in skip:
+                continue
+            for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+                if DATE_PATTERN.search(line) and not LEGAL.search(line):
+                    hits.append(f"{rel}:{n}: {line.strip()[:90]}")
+    assert not hits, "hard-coded dates in shipped content (use YYYY placeholders or plain citations):\n" + "\n".join(hits)
+
+
+# --- guards that must survive other people's setups ----------------------------------------------
+
+def test_vendored_files_are_protected_from_line_ending_conversion():
+    rules = {}
+    for line in (BRAIN / ".gitattributes").read_text(encoding="utf-8").splitlines():
+        if line.strip() and not line.startswith("#"):
+            pattern, *attrs = line.split()
+            rules[pattern] = attrs
+    missing = [p for p in sorted(vendored_paths()) if "-text" not in rules.get(p, [])]
+    assert not missing, f"add `<path> -text` to .gitattributes so a CRLF checkout cannot fail --verify: {missing}"
+
+
+def test_project_settings_register_the_vendored_guard_without_the_plugin():
+    settings = json.loads((BRAIN / ".claude" / "settings.json").read_text(encoding="utf-8"))
+    commands = [h["command"] for g in settings["hooks"]["PreToolUse"] if "Write" in g["matcher"] for h in g["hooks"]]
+    assert any("vendored_guard.py" in c for c in commands)

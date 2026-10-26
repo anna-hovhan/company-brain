@@ -32,8 +32,10 @@ jobs:
         run: ./brain upstream-check --verify
 
       # The brain's own notes must obey the freshness policy (every fact timeless, dated or a pointer).
+      # Errors fail the build. Aged `as of` stamps are warnings only, so a note growing old never
+      # breaks CI by itself.
       - name: Freshness lint
-        run: ./brain freshness --strict
+        run: ./brain freshness
 
       # Layer leaks, layer mismatches and private sections in shared notes are errors.
       - name: Brain check
