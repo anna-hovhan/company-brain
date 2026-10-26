@@ -1,0 +1,10 @@
+{
+  "userIgnoreFilters": [
+    "Templates/",
+    "Exports/"
+  ],
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./",
+  "newLinkFormat": "shortest",
+  "showUnsupportedFiles": false
+}

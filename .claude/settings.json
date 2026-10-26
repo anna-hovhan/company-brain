@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./brain:*)",
+      "Bash(python3 .brain/scripts/brain.py:*)"
+    ]
+  }
+}

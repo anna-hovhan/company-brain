@@ -1,0 +1,67 @@
+{
+  "data_version": 2,
+  "command_timeout": 5,
+  "templates_folder": "Templates",
+  "templates_pairs": [],
+  "trigger_on_file_creation_mode": "folder",
+  "auto_jump_to_cursor": true,
+  "jump_to_cursor_after_file_name": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "folder_templates": [
+    {
+      "folder": "Personal/Daily",
+      "template": "Templates/Daily Note Template.md"
+    },
+    {
+      "folder": "Personal/Weekly",
+      "template": "Templates/Weekly Note Template.md"
+    },
+    {
+      "folder": "Personal/1-1s",
+      "template": "Templates/One-on-One Template.md"
+    },
+    {
+      "folder": "Personal/Goals",
+      "template": "Templates/Objective Template.md"
+    },
+    {
+      "folder": "Company/OKRs",
+      "template": "Templates/Objective Template.md"
+    },
+    {
+      "folder": "Company/Org/People",
+      "template": "Templates/Person Template.md"
+    },
+    {
+      "folder": "Company/Projects",
+      "template": "Templates/Project Template.md"
+    },
+    {
+      "folder": "Company/Meetings",
+      "template": "Templates/Meeting Template.md"
+    },
+    {
+      "folder": "Company/Decisions",
+      "template": "Templates/Decision Template.md"
+    },
+    {
+      "folder": "Company/Knowledge",
+      "template": "Templates/Knowledge Note Template.md"
+    }
+  ],
+  "file_templates": [],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    "Templates/Meeting Template.md",
+    "Templates/Decision Template.md"
+  ],
+  "startup_templates": [],
+  "intellisense_render": "1",
+  "ignore_folders_on_creation": [
+    ".brain",
+    "Sources",
+    "Exports"
+  ]
+}

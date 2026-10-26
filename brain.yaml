@@ -1,0 +1,20 @@
+# Company Brain configuration (shared, committed).
+# Personal identity lives in Personal/Me.md, which is never committed.
+# This file is also the marker hooks and the CLI use to find the brain root.
+
+brain:
+  name: Company Brain
+  version: 0.1.0
+
+company:
+  name: "Your Company"          # set by /company-brain:setup or: brain init --company "Name"
+  fiscal_year_start: 1          # month the fiscal year starts (1 = calendar quarters)
+  timezone: UTC
+
+sharing:
+  model: git                    # git | drive | local  (see System/Layers and privacy.md)
+  remote: ""                    # e.g. git@github.com:your-org/company-brain.git (private)
+
+# Shared source mounts (managed by: brain connect <path> --name <Name> --shared).
+# Each teammate recreates them on their machine with: brain connect --sync
+sources: []

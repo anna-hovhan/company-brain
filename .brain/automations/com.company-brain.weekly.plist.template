@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Company Brain weekly run (macOS launchd). Copy to ~/Library/LaunchAgents/com.company-brain.weekly.plist,
+     replace BRAIN_DIR and the PATH entries, then: launchctl load ~/Library/LaunchAgents/com.company-brain.weekly.plist
+     Runs Fridays 15:00. Drafts only: the prompt forbids publishing, promoting, pushing, or sending. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.company-brain.weekly</string>
+  <key>WorkingDirectory</key><string>BRAIN_DIR</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string><string>-lc</string>
+    <string>claude -p "Run the company-brain weekly skill for this week. Draft only: do not publish the team update, promote notes, push to git, or send messages." --permission-mode acceptEdits</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:HOME_DIR/.local/bin</string></dict>
+  <key>StartCalendarInterval</key>
+  <dict><key>Weekday</key><integer>5</integer><key>Hour</key><integer>15</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardOutPath</key><string>/tmp/company-brain-weekly.log</string>
+  <key>StandardErrorPath</key><string>/tmp/company-brain-weekly.err</string>
+</dict>
+</plist>

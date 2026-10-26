@@ -1,0 +1,17 @@
+{
+  "name": "company-brain",
+  "owner": { "name": "Anna Hovhannisyan" },
+  "metadata": {
+    "description": "Marketplace for the Company Brain plugin, shipped inside the brain vault itself.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "company-brain",
+      "source": "./.brain",
+      "description": "AI operating system for a company in an Obsidian vault: strategy, OKRs, discovery, prioritization, roadmap, org, projects, meetings, weekly notes; personal, team, and company layers.",
+      "version": "0.1.0",
+      "category": "productivity"
+    }
+  ]
+}

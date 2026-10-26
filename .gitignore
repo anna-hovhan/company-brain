@@ -1,0 +1,22 @@
+# Company Brain: what never leaves this machine
+/Personal/
+/Sources/
+/Exports/
+/index.md
+/log.md
+/System/Build Plan.md
+
+# Obsidian per-device state and third-party plugin code (each person installs plugins;
+# plugin settings are shared)
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/plugins/*/*
+!.obsidian/plugins/*/data.json
+.trash/
+
+# Local tooling
+.claude/settings.local.json
+.env
+__pycache__/
+*.pyc
+.DS_Store

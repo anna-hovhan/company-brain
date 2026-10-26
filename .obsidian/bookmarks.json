@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 0,
+      "path": "Home.md",
+      "title": "Home"
+    },
+    {
+      "type": "file",
+      "ctime": 0,
+      "path": "Company/Company.md",
+      "title": "Company"
+    },
+    {
+      "type": "file",
+      "ctime": 0,
+      "path": "Personal/Personal.md",
+      "title": "Personal"
+    },
+    {
+      "type": "file",
+      "ctime": 0,
+      "path": "System/How Company Brain works.md",
+      "title": "How it works"
+    }
+  ]
+}
