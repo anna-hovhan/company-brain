@@ -19,7 +19,7 @@ Git never carries content. The repository holds only placeholders, company and t
 
 ## See it working
 
-Screenshots from a demo brain filled with synthetic data. Click any image for full size.
+Recordings and screenshots from a demo brain filled with synthetic data. Click any image for full size.
 
 <table>
 <tr>
@@ -27,8 +27,8 @@ Screenshots from a demo brain filled with synthetic data. Click any image for fu
 <td width="50%" valign="top"><a href=".github/screenshots/graph-project-links.webp"><img src=".github/screenshots/graph-project-links.webp" alt="The same graph with the Self-serve Onboarding project highlighted, showing its links to people, a company objective, a decision, meetings and the Product and Platform teams."></a><br><b>Hover a project</b> to see the people, goals, decisions and meetings linked to it.</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href=".github/screenshots/claude-adds-board-cards.webp"><img src=".github/screenshots/claude-adds-board-cards.webp" alt="Claude in a chat, asked to add cards from the last decision and meeting to the right boards. It lists the two cards it added, on the Platform Board and on My Board, and the action items it left alone because they were already on a board."></a><br><b>Claude routes action items to boards.</b> From the latest meeting and decision, it adds the missing cards to the right boards and says what it left alone.</td>
-<td width="50%" valign="top"><a href=".github/screenshots/effort-impact-matrix.webp"><img src=".github/screenshots/effort-impact-matrix.webp" alt="The Product Prioritization note in Obsidian: a generated effort versus impact matrix with quadrants for quick wins, big bets, fill-ins and money pits, plotting the Product team's solutions."></a><br><b>A generated effort-impact matrix.</b> <code>brain refresh</code> plots each solution from the impact and effort scores on its own note.</td>
+<td width="50%" valign="top"><a href=".github/screenshots/claude-adds-board-cards.gif"><img src=".github/screenshots/claude-adds-board-cards.gif" alt="Animation: Claude in a chat, asked to add cards from the last decision and meeting to the right boards, lists the two cards it added and the action items it left alone because they were already on a board. Then My Board and the Platform Board in Obsidian show the new cards."></a><br><b>Claude routes action items to boards.</b> From the latest meeting and decision, it adds the missing cards to the right boards and says what it left alone.</td>
+<td width="50%" valign="top"><a href=".github/screenshots/effort-impact-matrix.gif"><img src=".github/screenshots/effort-impact-matrix.gif" alt="Animation in Obsidian: the Product Prioritization note with a generated effort versus impact matrix and RICE ranking of the Product team's solutions, then an opportunity and its solutions, one solution's impact and effort scores, the Product Roadmap board and the graph view."></a><br><b>A generated effort-impact matrix.</b> <code>brain refresh</code> plots each solution from the impact and effort scores on its own note and ranks them by RICE. The recording follows one solution from its opportunity to the roadmap.</td>
 </tr>
 </table>
 
