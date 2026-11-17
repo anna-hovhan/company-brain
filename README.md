@@ -1,3 +1,12 @@
+[![GitHub stars](https://img.shields.io/github/stars/anna-hovhan/company-brain)](https://github.com/anna-hovhan/company-brain/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#content-and-system-travel-separately)
+[![CI](https://github.com/anna-hovhan/company-brain/actions/workflows/ci.yml/badge.svg)](https://github.com/anna-hovhan/company-brain/actions/workflows/ci.yml)
+[![Built on: obsidian-second-brain](https://img.shields.io/badge/built%20on-obsidian--second--brain-blue)](https://github.com/eugeniughelbur/obsidian-second-brain)
+[![Obsidian vault](https://img.shields.io/badge/Obsidian-vault-7C3AED?logo=obsidian&logoColor=white)](#quick-start)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-D97757?logo=anthropic&logoColor=white)](#how-claude-accesses-it)
+[![Python 3, stdlib only](https://img.shields.io/badge/python-3%20stdlib%20only-3776AB?logo=python&logoColor=white)](#quick-start)
+
 # Company Brain
 
 An AI operating system for a company that lives in one folder. You browse and edit it in **Obsidian**. **Claude** operates it through a plugin with skills, hooks, an MCP server and a CLI. It shares knowledge in three layers: **personal**, **team** and **company**.
