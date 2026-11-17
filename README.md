@@ -17,6 +17,25 @@ Open this folder as an Obsidian vault. Then, in Claude Code, run `/company-brain
 ## Decision
 Git never carries content. The repository holds only placeholders, company and team notes travel through a shared folder, and personal notes stay on your machine. This keeps private material out of version control and gives each layer its own sharing path.
 
+## See it working
+
+Screenshots from a demo brain filled with synthetic data. Click any image for full size.
+
+<table>
+<tr>
+<td width="50%" valign="top"><a href=".github/screenshots/graph-view.webp"><img src=".github/screenshots/graph-view.webp" alt="Obsidian graph view of the demo brain: its notes linked into one network around the index, coloured by layer."></a><br><b>The brain as one graph.</b> Every note links to what it serves. Blue is the company layer, green the teams, orange personal notes, purple objectives.</td>
+<td width="50%" valign="top"><a href=".github/screenshots/graph-project-links.webp"><img src=".github/screenshots/graph-project-links.webp" alt="The same graph with the Self-serve Onboarding project highlighted, showing its links to people, a company objective, a decision, meetings and the Product and Platform teams."></a><br><b>Hover a project</b> to see the people, goals, decisions and meetings linked to it.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href=".github/screenshots/claude-adds-board-cards.webp"><img src=".github/screenshots/claude-adds-board-cards.webp" alt="Claude in a chat, asked to add cards from the last decision and meeting to the right boards. It lists the two cards it added, on the Platform Board and on My Board, and the action items it left alone because they were already on a board."></a><br><b>Claude routes action items to boards.</b> From the latest meeting and decision, it adds the missing cards to the right boards and says what it left alone.</td>
+<td width="50%" valign="top"><a href=".github/screenshots/effort-impact-matrix.webp"><img src=".github/screenshots/effort-impact-matrix.webp" alt="The Product Prioritization note in Obsidian: a generated effort versus impact matrix with quadrants for quick wins, big bets, fill-ins and money pits, plotting the Product team's solutions."></a><br><b>A generated effort-impact matrix.</b> <code>brain refresh</code> plots each solution from the impact and effort scores on its own note.</td>
+</tr>
+</table>
+
+<a href=".github/screenshots/opportunity-solution-tree-canvas.webp"><img src=".github/screenshots/opportunity-solution-tree-canvas.webp" alt="An Obsidian canvas of the opportunity solution tree for the outcome Raise 14-day activation rate to 60%: three opportunities below it, then candidate solutions, then the experiments that test them." width="100%"></a>
+
+<b>Opportunity solution trees as canvases.</b> <code>brain refresh</code> lays out each tree in Obsidian: the outcome, the customer opportunities under it, candidate solutions, and the experiments that test them.
+
 ## What's inside
 
 | Area | Where | What |
