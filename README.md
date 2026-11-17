@@ -23,7 +23,7 @@ Recordings and screenshots from a demo brain filled with synthetic data. Click a
 
 <table>
 <tr>
-<td width="50%" valign="top"><a href=".github/screenshots/graph-view.webp"><img src=".github/screenshots/graph-view.webp" alt="Obsidian graph view of the demo brain: its notes linked into one network around the index, coloured by layer."></a><br><b>The brain as one graph.</b> Every note links to what it serves. Blue is the company layer, green the teams, orange personal notes, purple objectives.</td>
+<td width="50%" valign="top"><a href=".github/screenshots/cb-overview-knowledge-graph.gif"><img src=".github/screenshots/cb-overview-knowledge-graph.gif" alt="Animation of the Obsidian graph view of the demo brain: its notes linked into one network around the index, coloured by layer. Hovering a hub note highlights the notes linked to it and dims the rest."></a><br><b>The brain as one graph.</b> Every note links to what it serves. Blue is the company layer, green the teams, orange personal notes, purple objectives.</td>
 <td width="50%" valign="top"><a href=".github/screenshots/graph-project-links.webp"><img src=".github/screenshots/graph-project-links.webp" alt="The same graph with the Self-serve Onboarding project highlighted, showing its links to people, a company objective, a decision, meetings and the Product and Platform teams."></a><br><b>Hover a project</b> to see the people, goals, decisions and meetings linked to it.</td>
 </tr>
 <tr>
