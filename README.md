@@ -8,6 +8,15 @@ It's built on [obsidian-second-brain](https://github.com/eugeniughelbur/obsidian
 
 > **Open this folder as an Obsidian vault.** It is plain markdown: wikilinks, graph view, Dataview hubs and kanban boards work out of the box. See Quick start.
 
+## Problem
+A company's context sits in Slack, Drive, Jira and meeting notes, so neither people nor Claude can see the full picture when they need it.
+
+## Try it
+Open this folder as an Obsidian vault. Then, in Claude Code, run `/company-brain:setup` to create your folders, followed by `/company-brain:daily` for your first morning note. The full steps are in Quick start below.
+
+## Decision
+Git never carries content. The repository holds only placeholders, company and team notes travel through a shared folder, and personal notes stay on your machine. This keeps private material out of version control and gives each layer its own sharing path.
+
 ## What's inside
 
 | Area | Where | What |
