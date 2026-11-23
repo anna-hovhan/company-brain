@@ -1,3 +1,5 @@
+<p><img src="System/company-brain-card.svg" width="100%" alt="Company Brain: strategy, goals, projects and weekly work in one linked folder that AI agents read before they act, so every answer starts with company context. Beside the text, three layers (company, team and private) each feed the agent." /></p>
+
 [![GitHub stars](https://img.shields.io/github/stars/anna-hovhan/company-brain)](https://github.com/anna-hovhan/company-brain/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#content-and-system-travel-separately)
